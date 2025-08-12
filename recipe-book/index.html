@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Recipe Book</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🍳 Recipe Book</h1>
+      <p>Discover, save, and share your favorite recipes</p>
+    </header>
+
+    <section id="add-recipe">
+      <h2>Add New Recipe</h2>
+      <form id="recipe-form">
+        <div class="form-group">
+          <label for="recipe-name">Recipe Name *</label>
+          <input type="text" id="recipe-name" placeholder="E.g. Spaghetti Carbonara" required />
+        </div>
+
+        <div class="form-group">
+          <label for="ingredients">Ingredients (one per line) *</label>
+          <textarea id="ingredients" placeholder="Pasta&#10;Eggs&#10;Cheese&#10;Bacon" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="steps">Preparation Steps *</label>
+          <textarea id="steps" placeholder="1. Boil pasta...&#10;2. Fry bacon..." required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="recipe-image">Upload Image</label>
+          <input type="file" id="recipe-image" accept="image/*" />
+          <small>Optional – supported formats: JPG, PNG, GIF</small>
+        </div>
+
+        <button type="submit">Add Recipe</button>
+      </form>
+    </section>
+
+    <section id="search-section">
+      <input type="text" id="search-input" placeholder="Search recipes by name or ingredient..." />
+    </section>
+    <section id="recipes-container">
+      <h2>Your Recipes</h2>
+      <div id="recipes-grid" class="recipes-grid">
+      </div>
+    </section>
+  </div>
+
+  <div id="recipe-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <img id="modal-image" src="" alt="Recipe Image" />
+      <h2 id="modal-title"></h2>
+      <div class="modal-body">
+        <div class="ingredients-section">
+          <h3>Ingredients</h3>
+          <ul id="modal-ingredients"></ul>
+        </div>
+        <div class="steps-section">
+          <h3>Steps</h3>
+          <p id="modal-steps"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
